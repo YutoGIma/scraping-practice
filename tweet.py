@@ -1,13 +1,14 @@
 from selenium import webdriver
 import chromedriver_binary
 import time
+import config
 
 driver = webdriver.Chrome(executable_path="C:\chromedriver.exe")
 
-account = ""
-password = ""
+account = config.account
+password = config.password
 text ="seleniumでログインしてツイートしています。"
-
+print(account)
 driver.get('https://twitter.com/login/')
 time.sleep(3)
 loginUser = driver.find_element_by_name("text")
